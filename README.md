@@ -2,7 +2,7 @@
 
 This repository provides LaTeX [UltiSnips][us] snippets for Vim. Sorry that was a mouthful. It simply means these snippets require UltiSnips plug-in pre-installed to work as intended.
 
-## What is are snippets and how do they work?
+## What are snippets and how do they work?
 
 See a demo of snippets in action.
 
