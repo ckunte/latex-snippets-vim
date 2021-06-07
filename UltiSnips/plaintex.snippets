@@ -1,10 +1,10 @@
 snippet note "note template" bA
-%!TeX TS-program = xelatex
-%!TeX encoding = UTF-8 Unicode
+%!TeX ts-program = xelatex
+%!TeX encoding = utf-8 Unicode
 \documentclass[11pt,a4paper]{article}
-\usepackage{ckunte}
-\title{$1}
-\author{C Kunte}
+
+\title{${1:Title}}
+\author{${2:Author}}
 
 \begin{document}
 
@@ -30,14 +30,14 @@ snippet beg "begin{} / end{}" bA
 endsnippet
 
 snippet sec "section{} and label{}" bA
-\section{$1} % (fold)
+\section{${1:SecName}} % (fold)
 \label{sec:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\l$1$2$3)/g}}}
   $0
 % section $2 (end)
 endsnippet
 
 snippet sub "subsection{} and label" bA
-\subsection{$1} % (fold)
+\subsection{${1:SubName}} % (fold)
 \label{sub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\l$1$2$3)/g}}}
   $0
 % subsection $2 (end)
@@ -53,6 +53,10 @@ snippet item "Itemised list" bA
 \begin{itemize}
   \item $1
 \end{itemize}
+endsnippet
+
+snippet itm "Item line" iA
+\item $1
 endsnippet
 
 snippet fig "figure and label" bA
