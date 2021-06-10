@@ -67,9 +67,23 @@ This repository contains the following snippets:
 
 To be able to use snippets, the following are required: 
 
-1. Vim version that supports python3 bindings. Check `vim --version` and it should have `+python3` in the listing. For example, `vim-nox` is +python3 enabled, and it can be installed using apt (`sudo apt-get install vim-nox`).
-3. [UltiSnips][us] 
-4. [latex-snippets-vim][ck]
+1. Vim version that supports python3 bindings. Check `vim --version | grep '+python3'` and it should have `+python3` or `+python3/dyn` in the listing. If you do not have `+python3` enabled, then see how to enable this below.
+    1. On Debian Linux, `vim-nox` for example is `+python3` enabled, and it can be installed using apt like so: `sudo apt-get install vim-nox`. But before you do, it may be necessary to uninstall `vim-tiny` beforehand (that some systems are bundled-with) with the following: `sudo apt-get remove vim-tiny`.
+    2. On a MacOS, the best way to get vim with `+python3` bindings is to compile from source. Here is how in five steps (be sure to read comments below for instructions):
+        ```bash
+        git clone --depth=1 git clone https://github.com/vim/vim.git
+        cd vim/src
+        # Edit Makefile in vim/src, uncomment the following line, and save it
+        # CONF_OPT_PYTHON3 = --enable-python3interp=dynamic
+        # Once the above line in Makefile is uncommented, run the following
+        make
+        # To install the successfully compiled vim with +python3 bindings, run
+        # the following to set the compiled version as the system default.
+        make install
+        # vim will to /usr/local/bin
+        ```
+2. [UltiSnips][us] 
+3. [latex-snippets-vim][ck]
 
 ## Installation
 
