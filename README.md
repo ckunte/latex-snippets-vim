@@ -6,7 +6,7 @@ This repository provides LaTeX [UltiSnips][us] snippets for Vim. Sorry that was 
 
 See a demo of snippets in action.
 
-https://user-images.githubusercontent.com/177423/121557170-1a707b00-ca47-11eb-8eb5-8df8ef1b530a.mp4
+https://user-images.githubusercontent.com/177423/121562114-b7cdae00-ca4b-11eb-9865-875ecb1b190b.mp4
 
 The concept of a snippet is simple. Think of a block of pre-formatted text (i.e., a template) that one needs to use often. One can of-course type or copy-paste such blocks of text repeatedly the hard way, or one could instead assign such common blocks of text with an abbreviated keyword, which in turn calls the entire block of text. To ensure such blocks do not accidentally appear while typing the actual content of the note, paper, or report, a trigger is required. To illustrate this, see below:
 
