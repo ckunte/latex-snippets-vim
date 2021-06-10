@@ -66,7 +66,7 @@ To be able to use snippets, the following are required:
 
     1. On __Debian Linux__, `vim-nox` for example is `+python3` enabled, and it can be installed using apt like so: `sudo apt-get install vim-nox`. But before you do, it may be necessary to uninstall `vim-tiny` beforehand (that some systems are bundled-with) with the following: `sudo apt-get remove vim-tiny`.
 
-    2. On __MacOS__, the best way to get vim with `+python3` bindings is to compile from source. Here is how in five steps (be sure to read comments below for instructions):
+    2. On __MacOS__, the best way to get vim with `+python3` bindings is to compile from source. Before this, it is best to download the latest [python](https://www.python.org) and install it on the Mac (v3.9.5 as of this writing). Here is how in five steps (be sure to read comments below for instructions):
 
     ```bash
     git clone --depth=1 https://github.com/vim/vim.git
