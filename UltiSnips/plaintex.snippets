@@ -43,6 +43,13 @@ snippet sub "subsection{} and label" bA
 % subsection $2 (end)
 endsnippet
 
+snippet subs "subsubsection{} and label" bA
+\subsubsection{${1:SubsubName}} % (fold)
+\label{ssub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\l$1$2$3)/g}}}
+  $0
+% subsubsection $2 (end)
+endsnippet
+
 snippet enum "Enumerate list" bA
 \begin{enumerate}
   \item $1
@@ -57,6 +64,12 @@ endsnippet
 
 snippet itm "Item line" iA
 \item $1
+endsnippet
+
+snippet desc "Description" bA
+\\begin{description}
+  \item[$1] $0
+\\end{description}
 endsnippet
 
 snippet fig "figure and label" bA
@@ -80,6 +93,15 @@ snippet tabl "add table" bA
     Narrow band & 0.343 \\\\
   \end{tabular}
 \end{table}
+endsnippet
+
+snippet par "add paragraph" bA
+\paragraph{${1:paragraph name}} % (fold)
+\label{par:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\l$1$2$3)/g}}}
+
+$0
+
+% paragraph $2 (end)
 endsnippet
 
 snippet pdf "insert pdf file" bA
