@@ -80,7 +80,7 @@ To be able to use snippets, the following are required:
         # To install the successfully compiled vim with +python3 bindings, run
         # the following to set the compiled version as the system default.
         make install
-        # vim will to /usr/local/bin
+        # vim will be installed to /usr/local/bin
         ```
 2. [UltiSnips][us] 
 3. [latex-snippets-vim][ck]
