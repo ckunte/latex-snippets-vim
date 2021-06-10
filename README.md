@@ -33,55 +33,51 @@ Whereas when writing this following sentence, the keyword `note` does not expand
 
 This repository contains the following snippets:
 
-| Template snippets          | Description                           |
+| Snippets                   | Description                           |
 | -------------------------- | ------------------------------------- |
 | `note` + <kbd>tab</kbd>    | Inserts a note template (for XeLaTeX) |
 | `toc` + <kbd>tab</kbd>     | Inserts a TOC block                   |
-
-| Section and block snippets | Description                           |
-| -------------------------- | ------------------------------------- |
 | `beg` + <kbd>tab</kbd>     | Inserts a begin/end block             |
 | `sec` + <kbd>tab</kbd>     | Inserts a section block               |
 | `sub` + <kbd>tab</kbd>     | Inserts a subsection block            |
-| `enum` + <kbd>tab</kbd>    | Inserts an enum list block            |
-| `item` + <kbd>tab</kbd>    | Inserts an item list block            |
+| `subs` + <kbd>tab</kbd>    | Inserts a subsubsection block         |
+| `enum` + <kbd>tab</kbd>    | Inserts an enumerate list block       |
+| `item` + <kbd>tab</kbd>    | Inserts an itemize list block         |
 | `itm` + <kbd>tab</kbd>     | Inserts an item line                  |
+| `desc` + <kbd>tab</kbd>    | Inserts a description list block      |
+| `par` + <kbd>tab</kbd>     | Inserts a paragraph block             |
 | `fig` + <kbd>tab</kbd>     | Inserts a figure/label block          |
 | `tabl` + <kbd>tab</kbd>    | Inserts a table block                 |
 | `ref` + <kbd>tab</kbd>     | Inserts a reference block             |
+| `bit` + <kbd>tab</kbd>     | Inserts a bibitem block               |
 | `apdx` + <kbd>tab</kbd>    | Inserts an appendix block             |
-
-| Math snippets              | Description                           |
-| -------------------------- | ------------------------------------- |
+| `pdf` + <kbd>tab</kbd>     | Inserts an `includepdf` line          |
 | `//` + <kbd>tab</kbd>      | Inserts a formatted fraction          |
 | `sr` + <kbd>tab</kbd>      | Inserts a formatted square            |
 | `cb` + <kbd>tab</kbd>      | Inserts a formatted cube              |
 | `compl` + <kbd>tab</kbd>   | Inserts a complement                  |
 | `_` + <kbd>tab</kbd>       | Formats and inserts a subscript       |
 
-| Include snippet            | Description                           |
-| -------------------------- | ------------------------------------- |
-| `pdf` + <kbd>tab</kbd>     | Inserts an `includepdf` line          |
-
 ## Requirements
 
 To be able to use snippets, the following are required: 
 
 1. Vim version that supports python3 bindings. Check `vim --version | grep '+python3'` and it should have `+python3` or `+python3/dyn` in the listing. If you do not have `+python3` enabled, then see how to enable this below.
-    1. On Debian Linux, `vim-nox` for example is `+python3` enabled, and it can be installed using apt like so: `sudo apt-get install vim-nox`. But before you do, it may be necessary to uninstall `vim-tiny` beforehand (that some systems are bundled-with) with the following: `sudo apt-get remove vim-tiny`.
-    2. On a MacOS, the best way to get vim with `+python3` bindings is to compile from source. Here is how in five steps (be sure to read comments below for instructions):
-        ```bash
-        git clone --depth=1 git clone https://github.com/vim/vim.git
-        cd vim/src
-        # Edit Makefile in vim/src, uncomment the following line, and save it
-        # CONF_OPT_PYTHON3 = --enable-python3interp=dynamic
-        # Once the above line in Makefile is uncommented, run the following
-        make
-        # To install the successfully compiled vim with +python3 bindings, run
-        # the following to set the compiled version as the system default.
-        make install
-        # vim will be installed to /usr/local/bin
-        ```
+
+    1. On __Debian Linux__, `vim-nox` for example is `+python3` enabled, and it can be installed using apt like so: `sudo apt-get install vim-nox`. But before you do, it may be necessary to uninstall `vim-tiny` beforehand (that some systems are bundled-with) with the following: `sudo apt-get remove vim-tiny`.
+
+    2. On __MacOS__, the best way to get vim with `+python3` bindings is to compile from source. Here is how in five steps (be sure to read comments below for instructions):
+
+    ```bash
+    git clone --depth=1 https://github.com/vim/vim.git
+    cd vim/src
+    # Uncomment the following line in the Makefile and save it
+    # CONF_OPT_PYTHON3 = --enable-python3interp=dynamic
+    make
+    make install
+    # vim will be installed to /usr/local/bin
+    ```
+
 2. [UltiSnips][us] 
 3. [latex-snippets-vim][ck]
 

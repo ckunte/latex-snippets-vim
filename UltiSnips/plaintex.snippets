@@ -8,7 +8,7 @@ snippet note "note template" bA
 
 \begin{document}
 
-  \maketitle
+\maketitle
 
 \end{document}
 endsnippet
@@ -25,28 +25,36 @@ endsnippet
 
 snippet beg "begin{} / end{}" bA
 \begin{$1}
-  $0
+
+$0
+
 \end{$1}
 endsnippet
 
 snippet sec "section{} and label{}" bA
 \section{${1:SecName}} % (fold)
 \label{sec:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\l$1$2$3)/g}}}
-  $0
+
+$0
+
 % section $2 (end)
 endsnippet
 
 snippet sub "subsection{} and label" bA
 \subsection{${1:SubName}} % (fold)
 \label{sub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\l$1$2$3)/g}}}
-  $0
+
+$0
+
 % subsection $2 (end)
 endsnippet
 
 snippet subs "subsubsection{} and label" bA
 \subsubsection{${1:SubsubName}} % (fold)
 \label{ssub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\l$1$2$3)/g}}}
-  $0
+
+$0
+
 % subsubsection $2 (end)
 endsnippet
 
@@ -67,9 +75,9 @@ snippet itm "Item line" iA
 endsnippet
 
 snippet desc "Description" bA
-\\begin{description}
+\begin{description}
   \item[$1] $0
-\\end{description}
+\end{description}
 endsnippet
 
 snippet fig "figure and label" bA
@@ -116,6 +124,13 @@ snippet ref "reference block" bA
   \emph{${3:Title}}, 
   ${4:Date}.
 \end{thebibliography}
+endsnippet
+
+snippet bit "bibitem" bA
+\bibitem{${1:label}}
+  ${2:Author},
+  \emph{${3:Title}}, 
+  ${4:Date}.
 endsnippet
 
 snippet apdx "Appendix block" bA
