@@ -92,14 +92,15 @@ call plug#begin('~/.vim/plugged')
 " UltiSnips for snippets
 Plug 'sirver/ultisnips'
 
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<C-j>'
-let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
-
 " LaTeX snippets for Vim using UltiSnips (downloads only tagged releases)
 Plug 'ckunte/latex-snippets-vim', { 'tag': '*' }
 
 call plug#end()
+
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
+
 ```
 
 Reload `.vimrc` and `:PlugInstall` to install plug-ins.
