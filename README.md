@@ -1,4 +1,4 @@
-# LaTeX snippets for Vim
+# LaTeX snippets for Vim and Neovim
 
 This repository provides LaTeX [UltiSnips][us] snippets for Vim. Sorry that was a mouthful. It simply means these snippets require UltiSnips plug-in pre-installed to work as intended.
 
@@ -6,11 +6,11 @@ This repository provides LaTeX [UltiSnips][us] snippets for Vim. Sorry that was 
 
 See a demo of snippets in action.
 
-https://user-images.githubusercontent.com/177423/118755310-398e4980-b89b-11eb-9167-746a98af80d3.mov
+https://user-images.githubusercontent.com/177423/121562114-b7cdae00-ca4b-11eb-9865-875ecb1b190b.mp4
 
 The concept of a snippet is simple. Think of a block of pre-formatted text (i.e., a template) that one needs to use often. One can of-course type or copy-paste such blocks of text repeatedly the hard way, or one could instead assign such common blocks of text with an abbreviated keyword, which in turn calls the entire block of text. To ensure such blocks do not accidentally appear while typing the actual content of the note, paper, or report, a trigger is required. To illustrate this, see below:
 
-In Vim' insert mode, typing `note` and hitting <kbd>tab</kbd> key on the keyboard inserts the following block, and focuses on the first user input _Title_ in the template. Type the title, and hold <kbd>Ctrl</kbd> and press <kbd>j</kbd> (`C-j` in Vim parlance) to jump to the next placeholder _Author_ to enter. The shortcut to jumping between placeholders can be set in `~/.vimrc` file. 
+In Vim' insert mode, typing `note` and hitting <kbd>tab</kbd> key on the keyboard inserts the following block, and focuses on the first user input _Title_ in the template. Type the title, and hold <kbd>ctrl</kbd> and press <kbd>j</kbd> (`c-j` in Vim parlance) to jump to the next placeholder _Author_ to enter. The shortcut to jumping between placeholders can be set in `~/.vimrc` file. 
 
 ```latex
 %!TeX TS-program = xelatex
@@ -27,10 +27,6 @@ In Vim' insert mode, typing `note` and hitting <kbd>tab</kbd> key on the keyboar
 \end{document}
 ```
 
-Whereas when writing this following sentence, the keyword `note` does not expand into a template block like above, since the <kbd>tab</kbd> is not used. (Caveat: Any snippet keyword that is the first word in a file or a line auto-expands without the <kbd>tab</kbd>, and is a smart feature of UltiSnips.)
-
-> I am writing to finish this note by noon.
-
 This repository contains the following snippets:
 
 | Snippets                   | Description                           |
@@ -38,6 +34,7 @@ This repository contains the following snippets:
 | `note` + <kbd>tab</kbd>    | Inserts a note template (for XeLaTeX) |
 | `toc` + <kbd>tab</kbd>     | Inserts a TOC block                   |
 | `beg` + <kbd>tab</kbd>     | Inserts a begin/end block             |
+| `sum` + <kbd>tab</kbd>     | Inserts a summary section block       |
 | `sec` + <kbd>tab</kbd>     | Inserts a section block               |
 | `sub` + <kbd>tab</kbd>     | Inserts a subsection block            |
 | `subs` + <kbd>tab</kbd>    | Inserts a subsubsection block         |
@@ -60,24 +57,9 @@ This repository contains the following snippets:
 
 ## Requirements
 
-To be able to use snippets, the following are required: 
+To be able to use snippets, the following are required:
 
-1. Vim version that supports python3 bindings. Check `vim --version | grep '+python3'` and it should have `+python3` or `+python3/dyn` in the listing. If you do not have `+python3` enabled, then see how to enable this below.
-
-    1. On __Debian Linux__, `vim-nox` for example is `+python3` enabled, and it can be installed using apt like so: `sudo apt-get install vim-nox`. But before you do, it may be necessary to uninstall `vim-tiny` beforehand (that some systems are bundled-with) with the following: `sudo apt-get remove vim-tiny`.
-
-    2. On __MacOS__, the best way to get vim with `+python3` bindings is to compile from source. Here is how in five steps (be sure to read comments below for instructions):
-
-    ```bash
-    git clone --depth=1 https://github.com/vim/vim.git
-    cd vim/src
-    # Uncomment the following line in the Makefile and save it
-    # CONF_OPT_PYTHON3 = --enable-python3interp=dynamic
-    make
-    make install
-    # vim will be installed to /usr/local/bin
-    ```
-
+1. Vim or Neovim with python3 support.
 2. [UltiSnips][us] 
 3. [latex-snippets-vim][ck]
 
@@ -92,14 +74,14 @@ call plug#begin('~/.vim/plugged')
 " UltiSnips for snippets
 Plug 'sirver/ultisnips'
 
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<C-j>'
-let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
-
 " LaTeX snippets for Vim using UltiSnips (downloads only tagged releases)
 Plug 'ckunte/latex-snippets-vim', { 'tag': '*' }
 
 call plug#end()
+
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 ```
 
 Reload `.vimrc` and `:PlugInstall` to install plug-ins.
