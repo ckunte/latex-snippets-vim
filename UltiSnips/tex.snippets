@@ -1,4 +1,4 @@
-snippet note "note template" b
+snippet note "note template" bA
 %!TeX ts-program = xelatex
 %!TeX encoding = utf-8 Unicode
 \documentclass[11pt,a4paper]{article}
@@ -154,13 +154,9 @@ snippet apdx "Appendix block" bA
 \pagebreak
         
 \appendix
-\phantomsection\addcontentsline{toc}{section}{Appendices}
-\section*{Appendices} % (fold)
-\label{sec:appendices}
   
   $1
 
-% section appendices (end)
 endsnippet
 
 snippet '([A-Za-z])(\d)' "auto subscript" wrA
@@ -169,6 +165,18 @@ endsnippet
 
 snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
 `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
+endsnippet
+
+snippet em "emphasize" iA
+\emph{$1}$0
+endsnippet
+
+snippet b "bold" iA
+\textbf{$1}$0
+endsnippet
+
+snippet sc "smallcaps" iA
+\textsc{$1}$0
 endsnippet
 
 snippet sr "^2" iA
