@@ -75,7 +75,7 @@ $0
 % subsubsection $2 (end)
 endsnippet
 
-snippet enum "Enumerate list" bA
+snippet enum "Enumerate list" b
 \begin{enumerate}
   \item $1
 \end{enumerate}
@@ -120,7 +120,7 @@ snippet tabl "add table" bA
 \end{table}
 endsnippet
 
-snippet par "add paragraph" bA
+snippet par "add paragraph" b
 \paragraph{${1:paragraph name}} % (fold)
 \label{par:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\l$1$2$3)/g}}}
 
@@ -129,11 +129,11 @@ $0
 % paragraph $2 (end)
 endsnippet
 
-snippet pdf "insert pdf file" bA
+snippet pdf "insert pdf file" b
 \includepdf[scale=1.0,angle=0,pages={-},pagecommand={}]{${1:Filename}.pdf}
 endsnippet
 
-snippet ref "reference block" bA
+snippet ref "reference block" b
 \phantomsection\addcontentsline{toc}{section}{References}
 \begin{thebibliography}{9}
 \bibitem{${1:label}}
@@ -143,14 +143,14 @@ snippet ref "reference block" bA
 \end{thebibliography}
 endsnippet
 
-snippet bit "bibitem" bA
+snippet bit "bibitem" b
 \bibitem{${1:label}}
   ${2:Author},
   \emph{${3:Title}}, 
   ${4:Date}.
 endsnippet
 
-snippet apdx "Appendix block" bA
+snippet apdx "Appendix block" b
 \pagebreak
         
 \appendix
@@ -167,15 +167,15 @@ snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
 `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
 endsnippet
 
-snippet em "emphasize" iA
+snippet em "emphasize" i
 \emph{$1}$0
 endsnippet
 
-snippet b "bold" iA
+snippet b "bold" i
 \textbf{$1}$0
 endsnippet
 
-snippet sc "smallcaps" iA
+snippet sc "smallcaps" i
 \textsc{$1}$0
 endsnippet
 
@@ -187,11 +187,11 @@ snippet cb "^3" iA
 ^3
 endsnippet
 
-snippet compl "complement" iA
+snippet compl "complement" i
 ^{c}
 endsnippet
 
-snippet td "superscript" iA
+snippet td "superscript" i
 ^{$1}$0
 endsnippet
 
