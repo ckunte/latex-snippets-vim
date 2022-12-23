@@ -31,6 +31,7 @@ This repository contains the following snippets:
 
 | Snippets                   | Description                           |
 | -------------------------- | ------------------------------------- |
+| `letter` + <kbd>tab</tab>  | Inserts a letter template             |
 | `note` + <kbd>tab</kbd>    | Inserts a note template (for XeLaTeX) |
 | `toc` + <kbd>tab</kbd>     | Inserts a TOC block                   |
 | `beg` + <kbd>tab</kbd>     | Inserts a begin/end block             |

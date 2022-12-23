@@ -1,3 +1,41 @@
+snippet letter "letter template" bA
+%!TeX ts-program = xelatex
+%!TeX encoding = utf-8 Unicode
+\documentclass[a4paper,11pt]{letter}
+\usepackage[margin=1.25in]{geometry}
+\usepackage[proportional,osf,scaled=1.064]{erewhon}
+\usepackage{pdfpages}
+%\date{August 12, 2016}
+\address{
+    Address line 1 \\ % Sender's address
+	Address line 2 \\ 
+	Address line 3
+}
+\signature{
+    Author \\ 
+    Email address \\ 
+    Phone number
+}
+\begin{document}
+\begin{letter}
+{
+    Recipient \\
+    Address line 1 \\
+    Address line 2 \\
+    Address line 3
+}
+\opening{Dear Recipient,}
+
+Blah.
+
+\closing{Sincerely,}
+
+\ps{\textsc{p.s.} Please find a document attached.} % Postscript
+\end{letter}
+%\includepdf[pages={-},scale=0.85]{document.pdf} % attachments
+\end{document}
+endsnippet
+
 snippet note "note template" bA
 %!TeX ts-program = xelatex
 %!TeX encoding = utf-8 Unicode
