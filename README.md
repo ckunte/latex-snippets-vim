@@ -40,8 +40,8 @@ This repository contains the following snippets:
 | `sub` + <kbd>tab</kbd>     | Inserts a subsection block            |
 | `subs` + <kbd>tab</kbd>    | Inserts a subsubsection block         |
 | `enum` + <kbd>tab</kbd>    | Inserts an enumerate list block       |
-| `item` + <kbd>tab</kbd>    | Inserts an itemize list block         |
-| `itm` + <kbd>tab</kbd>     | Inserts an item line                  |
+| `itm` + <kbd>tab</kbd>     | Inserts an itemize list block         |
+| `it` + <kbd>tab</kbd>      | Inserts an item line                  |
 | `desc` + <kbd>tab</kbd>    | Inserts a description list block      |
 | `par` + <kbd>tab</kbd>     | Inserts a paragraph block             |
 | `fig` + <kbd>tab</kbd>     | Inserts a figure/label block          |
