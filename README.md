@@ -42,19 +42,18 @@ This repository contains the following snippets:
 | `enum` + <kbd>tab</kbd>    | Inserts an enumerate list block       |
 | `itm` + <kbd>tab</kbd>     | Inserts an itemize list block         |
 | `it` + <kbd>tab</kbd>      | Inserts an item line                  |
-| `desc` + <kbd>tab</kbd>    | Inserts a description list block      |
+| `des` + <kbd>tab</kbd>     | Inserts a description list block      |
 | `par` + <kbd>tab</kbd>     | Inserts a paragraph block             |
 | `fig` + <kbd>tab</kbd>     | Inserts a figure/label block          |
 | `tabl` + <kbd>tab</kbd>    | Inserts a table block                 |
 | `ref` + <kbd>tab</kbd>     | Inserts a reference block             |
-| `bit` + <kbd>tab</kbd>     | Inserts a bibitem block               |
+| `bi` + <kbd>tab</kbd>      | Inserts a bib item block              |
 | `apdx` + <kbd>tab</kbd>    | Inserts an appendix block             |
 | `pdf` + <kbd>tab</kbd>     | Inserts an `includepdf` line          |
 | `//` + <kbd>tab</kbd>      | Inserts a formatted fraction          |
 | `sr` + <kbd>tab</kbd>      | Inserts a formatted square            |
 | `cb` + <kbd>tab</kbd>      | Inserts a formatted cube              |
 | `compl` + <kbd>tab</kbd>   | Inserts a complement                  |
-| `_` + <kbd>tab</kbd>       | Formats and inserts a subscript       |
 
 ## Requirements
 
