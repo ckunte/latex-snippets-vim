@@ -1,4 +1,4 @@
-snippet letter "letter template" bA
+snippet letter "letter template" b
 %!TeX ts-program = xelatex
 %!TeX encoding = utf-8 Unicode
 \documentclass[a4paper,11pt]{letter}
@@ -36,7 +36,7 @@ Blah.
 \end{document}
 endsnippet
 
-snippet note "note template" bA
+snippet note "note template" b
 %!TeX ts-program = xelatex
 %!TeX encoding = utf-8 Unicode
 \documentclass[11pt,a4paper]{article}
@@ -51,7 +51,7 @@ snippet note "note template" bA
 \end{document}
 endsnippet
 
-snippet toc "Table of contents, tables and figures" bA
+snippet toc "Table of contents, tables and figures" b
 \tableofcontents
 
 \listoffigures
@@ -61,7 +61,7 @@ snippet toc "Table of contents, tables and figures" bA
 \pagebreak
 endsnippet
 
-snippet abs "Abstract" bA
+snippet abs "Abstract" b
 \begin{abstract}
 
 $0
@@ -69,7 +69,7 @@ $0
 \end{abstract}
 endsnippet	
 
-snippet sum "Summary block" bA
+snippet sum "Summary block" b
 \phantomsection\addcontentsline{toc}{section}{Summary}
 \section*{Summary} % (fold)
 
@@ -78,7 +78,7 @@ $0
 % section summary (end)
 endsnippet
 
-snippet beg "begin{} / end{}" bA
+snippet beg "begin and block" b
 \begin{$1}
 
 $0
@@ -86,7 +86,7 @@ $0
 \end{$1}
 endsnippet
 
-snippet sec "section{} and label{}" bA
+snippet sec "section{} and label{}" b
 \section{${1:SecName}} % (fold)
 \label{sec:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\l$1$2$3)/g}}}
 
@@ -95,7 +95,7 @@ $0
 % section $2 (end)
 endsnippet
 
-snippet sub "subsection{} and label" bA
+snippet sub "subsection{} and label" b
 \subsection{${1:SubName}} % (fold)
 \label{sub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\l$1$2$3)/g}}}
 
@@ -104,7 +104,7 @@ $0
 % subsection $2 (end)
 endsnippet
 
-snippet subs "subsubsection{} and label" bA
+snippet subs "subsubsection{} and label" b
 \subsubsection{${1:SubsubName}} % (fold)
 \label{ssub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\l$1$2$3)/g}}}
 
@@ -119,23 +119,23 @@ snippet enum "Enumerate list" b
 \end{enumerate}
 endsnippet
 
-snippet item "Itemised list" bA
+snippet itm "Itemised list" b
 \begin{itemize}
   \item $1
 \end{itemize}
 endsnippet
 
-snippet itm "Item line" iA
+snippet it "Item line" i
 \item $1
 endsnippet
 
-snippet desc "Description" bA
+snippet desc "Description" b
 \begin{description}
   \item[$1] $0
 \end{description}
 endsnippet
 
-snippet fig "figure and label" bA
+snippet fig "figure and label" b
 \begin{figure}[H]
   \centering
   \includegraphics[angle=0,width=1.0\textwidth]{${1:Filename}}
@@ -144,7 +144,7 @@ snippet fig "figure and label" bA
 \end{figure}
 endsnippet
 
-snippet tabl "add table" bA
+snippet tabl "add table" b
 \begin{table}[H]
 \caption{${1:Description}}
 \label{tab:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\l$1$2$3)/g}}}
