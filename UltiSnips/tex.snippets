@@ -7,21 +7,21 @@ snippet letter "letter template" b
 \usepackage{pdfpages}
 %\date{August 12, 2016}
 \address{
-    ${1:Address line 1} \\ % Sender's address
-	${2:Address line 2} \\ 
-	${3:Address line 3}
+    ${1:Address line 1} \\\\ % Sender's address
+    ${2:Address line 2} \\\\ 
+    ${3:Address line 3}
 }
 \signature{
-    ${4:Author} \\ 
-    ${5:Email address} \\ 
+    ${4:Author} \\\\ 
+    ${5:Email address} \\\\ 
     ${6:Phone number}
 }
 \begin{document}
 \begin{letter}
 {
-    ${7:Recipient} \\
-    ${8:Address line 1} \\
-    ${9:Address line 2} \\
+    ${7:Recipient} \\\\
+    ${8:Address line 1} \\\\
+    ${9:Address line 2} \\\\
     ${10:Address line 3}
 }
 \opening{Dear Recipient,}
