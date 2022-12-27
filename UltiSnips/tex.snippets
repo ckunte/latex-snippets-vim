@@ -140,7 +140,7 @@ snippet fig "figure and label" b
   \centering
   \includegraphics[angle=0,width=1.0\textwidth]{${1:Filename}}
   \caption{$0}
-  \label{fig:$1} 
+  \label{fig:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\l$1$2$3)/g}}}
 \end{figure}
 endsnippet
 
