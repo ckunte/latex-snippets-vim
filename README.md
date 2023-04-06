@@ -1,10 +1,10 @@
 # LaTeX snippets for Vim and Neovim
 
-Preparing documents, papers, or letters to be type-set in LaTeX can be verbose, error-prone, and tedious without tooling assistance. A bunch of snippets provided in this repository try to reduce this tedium to as minimum as practicable.
+Typesetting documents, papers, or letters in LaTeX can be verbose, and error-prone. A bunch of snippets provided in this repository try to reduce this tedium to as low as practicable.
 
 ## What are snippets and how do they work?
 
-See a demo of snippets in action.
+A demo of snippets in action.
 
 https://user-images.githubusercontent.com/177423/121562114-b7cdae00-ca4b-11eb-9865-875ecb1b190b.mp4
 
