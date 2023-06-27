@@ -51,6 +51,8 @@ This repository contains the following snippets:
 | `apdx` + <kbd>tab</kbd>    | Inserts an appendix block             |
 | `pdf` + <kbd>tab</kbd>     | Inserts an `includepdf` line          |
 | `//` + <kbd>tab</kbd>      | Inserts a formatted fraction          |
+| `bf` + <kbd>tab</kbd>      | Inserts bold face tag `\textbf{}`     |
+| `em` + <kbd>tab</kbd>      | Inserts emphasize tag `\emph{}`       |
 | `sr` + <kbd>tab</kbd>      | Inserts a formatted square            |
 | `cb` + <kbd>tab</kbd>      | Inserts a formatted cube              |
 | `compl` + <kbd>tab</kbd>   | Inserts a complement                  |
