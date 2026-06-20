@@ -188,6 +188,74 @@ snippet bi "bib item" b
   ${4:Date}.
 endsnippet
 
+snippet cite "citation" i
+\cite{$1}$0
+endsnippet
+
+snippet noc "nocite" i
+\nocite{$1}$0
+endsnippet
+
+snippet citet "natbib textual citation" i
+\citet{$1}$0
+endsnippet
+
+snippet citep "natbib parenthetical citation" i
+\citep{$1}$0
+endsnippet
+
+snippet citea "natbib author citation" i
+\citeauthor{$1}$0
+endsnippet
+
+snippet citey "natbib year citation" i
+\citeyear{$1}$0
+endsnippet
+
+snippet textc "biblatex textual citation" i
+\textcite{$1}$0
+endsnippet
+
+snippet parenc "biblatex parenthetical citation" i
+\parencite{$1}$0
+endsnippet
+
+snippet autoc "biblatex autocite" i
+\autocite{$1}$0
+endsnippet
+
+snippet footc "biblatex footnote citation" i
+\footcite{$1}$0
+endsnippet
+
+snippet citen "citation with page number" i
+\cite[$1]{$2}$0
+endsnippet
+
+snippet citetn "natbib textual citation with page number" i
+\citet[$1]{$2}$0
+endsnippet
+
+snippet citepn "natbib parenthetical citation with page number" i
+\citep[$1]{$2}$0
+endsnippet
+
+snippet textcn "biblatex textual citation with page number" i
+\textcite[$1]{$2}$0
+endsnippet
+
+snippet parencn "biblatex parenthetical citation with page number" i
+\parencite[$1]{$2}$0
+endsnippet
+
+snippet autocn "biblatex autocite with page number" i
+\autocite[$1]{$2}$0
+endsnippet
+
+snippet footcn "biblatex footnote citation with page number" i
+\footcite[$1]{$2}$0
+endsnippet
+
 snippet apdx "Appendix block" b
 \pagebreak
 
@@ -203,6 +271,10 @@ endsnippet
 
 snippet bf "bold" i
 \textbf{$1}$0
+endsnippet
+
+snippet ti "italic" i
+\textit{$1}$0
 endsnippet
 
 snippet sc "smallcaps" i

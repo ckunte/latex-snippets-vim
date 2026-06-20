@@ -48,11 +48,29 @@ This repository contains the following snippets:
 | `tabl` + <kbd>tab</kbd>    | Inserts a table block                 |
 | `ref` + <kbd>tab</kbd>     | Inserts a reference block             |
 | `bi` + <kbd>tab</kbd>      | Inserts a bib item block              |
+| `cite` + <kbd>tab</kbd>    | Inserts a citation `\cite{}`          |
+| `noc` + <kbd>tab</kbd>     | Inserts a `\nocite{}`                 |
+| `citet` + <kbd>tab</kbd>   | Inserts natbib `\citet{}`             |
+| `citep` + <kbd>tab</kbd>   | Inserts natbib `\citep{}`             |
+| `citea` + <kbd>tab</kbd>   | Inserts natbib `\citeauthor{}`        |
+| `citey` + <kbd>tab</kbd>   | Inserts natbib `\citeyear{}`          |
+| `textc` + <kbd>tab</kbd>   | Inserts biblatex `\textcite{}`        |
+| `parenc` + <kbd>tab</kbd>  | Inserts biblatex `\parencite{}`       |
+| `autoc` + <kbd>tab</kbd>   | Inserts biblatex `\autocite{}`        |
+| `footc` + <kbd>tab</kbd>   | Inserts biblatex `\footcite{}`        |
+| `citen` + <kbd>tab</kbd>   | Inserts `\cite[]{}` with page         |
+| `citetn` + <kbd>tab</kbd>  | Inserts `\citet[]{}` with page        |
+| `citepn` + <kbd>tab</kbd>  | Inserts `\citep[]{}` with page        |
+| `textcn` + <kbd>tab</kbd>  | Inserts `\textcite[]{}` with page     |
+| `parencn` + <kbd>tab</kbd> | Inserts `\parencite[]{}` with page    |
+| `autocn` + <kbd>tab</kbd>  | Inserts `\autocite[]{}` with page     |
+| `footcn` + <kbd>tab</kbd>  | Inserts `\footcite[]{}` with page     |
 | `apdx` + <kbd>tab</kbd>    | Inserts an appendix block             |
 | `pdf` + <kbd>tab</kbd>     | Inserts an `includepdf` line          |
 | `//` + <kbd>tab</kbd>      | Inserts a formatted fraction          |
 | `bf` + <kbd>tab</kbd>      | Inserts bold face tag `\textbf{}`     |
 | `em` + <kbd>tab</kbd>      | Inserts emphasize tag `\emph{}`       |
+| `ti` + <kbd>tab</kbd>      | Inserts italic tag `\textit{}`        |
 | `sr` + <kbd>tab</kbd>      | Inserts a formatted square            |
 | `cb` + <kbd>tab</kbd>      | Inserts a formatted cube              |
 | `compl` + <kbd>tab</kbd>   | Inserts a complement                  |
