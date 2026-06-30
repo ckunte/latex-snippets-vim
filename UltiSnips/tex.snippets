@@ -7,21 +7,21 @@ snippet letter "letter template" b
 \usepackage{pdfpages}
 %\date{August 12, 2016}
 \address{
-    ${1:Address line 1} \\\\ % Sender's address
-    ${2:Address line 2} \\\\ 
+    ${1:Address line 1} \\
+    ${2:Address line 2} \\
     ${3:Address line 3}
 }
 \signature{
-    ${4:Author} \\\\ 
-    ${5:Email address} \\\\ 
+    ${4:Author} \\
+    ${5:Email address} \\
     ${6:Phone number}
 }
 \begin{document}
 \begin{letter}
 {
-    ${7:Recipient} \\\\
-    ${8:Address line 1} \\\\
-    ${9:Address line 2} \\\\
+    ${7:Recipient} \\
+    ${8:Address line 1} \\
+    ${9:Address line 2} \\
     ${10:Address line 3}
 }
 \opening{Dear Recipient,}
@@ -34,6 +34,7 @@ Blah.
 \end{letter}
 %\includepdf[pages={-},scale=0.85]{document.pdf} % attachments
 \end{document}
+$0
 endsnippet
 
 snippet note "note template" b
@@ -48,6 +49,8 @@ snippet note "note template" b
 
 \maketitle
 
+$0
+
 \end{document}
 endsnippet
 
@@ -59,6 +62,17 @@ snippet toc "Table of contents, tables and figures" b
 \listoftables
 
 \pagebreak
+$0
+endsnippet
+
+snippet lof "List of figures only" b
+\listoffigures
+$0
+endsnippet
+
+snippet lot "List of tables only" b
+\listoftables
+$0
 endsnippet
 
 snippet abs "Abstract" b
@@ -115,18 +129,18 @@ endsnippet
 
 snippet enum "Enumerate list" b
 \begin{enumerate}
-  \item $1
+  \item $0
 \end{enumerate}
 endsnippet
 
 snippet itm "Itemised list" b
 \begin{itemize}
-  \item $1
+  \item $0
 \end{itemize}
 endsnippet
 
 snippet it "Item line" i
-\item $1
+\item $0
 endsnippet
 
 snippet des "Description" b
@@ -135,7 +149,7 @@ snippet des "Description" b
 \end{description}
 endsnippet
 
-snippet fig "figure and label" b
+snippet fig "figure and label (requires \\usepackage{float} for [H])" b
 \begin{figure}[H]
   \centering
   \includegraphics[angle=0,width=1.0\textwidth]{${1:Filename}}
@@ -144,16 +158,18 @@ snippet fig "figure and label" b
 \end{figure}
 endsnippet
 
-snippet tabl "add table" b
+snippet tabl "add table (booktabs version)" b
 \begin{table}[H]
 \caption{${1:Description}}
 \label{tab:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\l$1$2$3)/g}}}
 \centering
-  \begin{tabular}{+l^c}
-  \rowstyle{\itshape}
-         Label1 & Label2 \\\\
-  Full spectrum & 0.358 \\\\
-    Narrow band & 0.343 \\\\
+  \begin{tabular}{lc}
+  \toprule
+         Label1 & Label2 \\
+  \midrule
+   Full spectrum & 0.358 \\
+     Narrow band & 0.343 \\
+  \bottomrule
   \end{tabular}
 \end{table}
 endsnippet
@@ -169,6 +185,7 @@ endsnippet
 
 snippet pdf "insert pdf file" b
 \includepdf[scale=1.0,angle=0,pages={-},pagecommand={}]{${1:Filename}.pdf}
+$0
 endsnippet
 
 snippet ref "reference block" b
@@ -178,6 +195,7 @@ snippet ref "reference block" b
   ${2:Author},
   \emph{${3:Title}}, 
   ${4:Date}.
+$0
 \end{thebibliography}
 endsnippet
 
@@ -186,6 +204,7 @@ snippet bi "bib item" b
   ${2:Author},
   \emph{${3:Title}}, 
   ${4:Date}.
+$0
 endsnippet
 
 snippet apdx "Appendix block" b
@@ -193,7 +212,7 @@ snippet apdx "Appendix block" b
 
 \appendix
 
-$1
+$0
 
 endsnippet
 
@@ -209,20 +228,20 @@ snippet sc "smallcaps" i
 \textsc{$1}$0
 endsnippet
 
-snippet sr "^2" i
-^2
+snippet sq "superscript 2 (square)" i
+^2$0
 endsnippet
 
-snippet cb "^3" i
-^3
+snippet cube "superscript 3 (cube)" i
+^3$0
 endsnippet
 
-snippet compl "complement" i
-^{c}
-endsnippet
-
-snippet td "superscript" i
+snippet sup "superscript (generic)" i
 ^{$1}$0
+endsnippet
+
+snippet compl "complement (superscript c)" i
+^{c}$0
 endsnippet
 
 snippet // "Fraction" iA
