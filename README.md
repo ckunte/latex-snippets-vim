@@ -31,11 +31,14 @@ This repository contains the following snippets:
 
 | Snippets                   | Description                           |
 | -------------------------- | ------------------------------------- |
-| `letter` + <kbd>tab</tab>  | Inserts a letter template             |
+| `letter` + <kbd>tab</kbd>  | Inserts a letter template             |
 | `note` + <kbd>tab</kbd>    | Inserts a note template (for XeLaTeX) |
 | `toc` + <kbd>tab</kbd>     | Inserts a TOC block                   |
+| `lof` + <kbd>tab</kbd>     | Inserts a list of figures only        |
+| `lot` + <kbd>tab</kbd>     | Inserts a list of tables only         |
 | `beg` + <kbd>tab</kbd>     | Inserts a begin/end block             |
 | `sum` + <kbd>tab</kbd>     | Inserts a summary section block       |
+| `abs` + <kbd>tab</kbd>     | Inserts an abstract block             |
 | `sec` + <kbd>tab</kbd>     | Inserts a section block               |
 | `sub` + <kbd>tab</kbd>     | Inserts a subsection block            |
 | `subs` + <kbd>tab</kbd>    | Inserts a subsubsection block         |
@@ -53,8 +56,10 @@ This repository contains the following snippets:
 | `//` + <kbd>tab</kbd>      | Inserts a formatted fraction          |
 | `bf` + <kbd>tab</kbd>      | Inserts bold face tag `\textbf{}`     |
 | `em` + <kbd>tab</kbd>      | Inserts emphasize tag `\emph{}`       |
-| `sr` + <kbd>tab</kbd>      | Inserts a formatted square            |
-| `cb` + <kbd>tab</kbd>      | Inserts a formatted cube              |
+| `sc` + <kbd>tab</kbd>      | Inserts small caps tag `\textsc{}`    |
+| `sq` + <kbd>tab</kbd>      | Inserts a formatted square            |
+| `cube` + <kbd>tab</kbd>    | Inserts a formatted cube              |
+| `sup` + <kbd>tab</kbd>     | Inserts a generic superscript         |
 | `compl` + <kbd>tab</kbd>   | Inserts a complement                  |
 
 ## Requirements
