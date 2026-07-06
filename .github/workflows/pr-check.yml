@@ -1,0 +1,120 @@
+name: PR checks
+
+on:
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch base branch for comparison
+        run: git fetch origin "${{ github.event.pull_request.base.ref }}" --depth=1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Validate snippet syntax
+        id: validate
+        run: python3 scripts/validate_snippets.py
+        continue-on-error: true
+
+      - name: Check README is up to date
+        id: readme
+        env:
+          BASE_REF: origin/${{ github.event.pull_request.base.ref }}
+        run: python3 scripts/check_readme_sync.py
+        continue-on-error: true
+
+      - name: Build feedback comment
+        if: steps.validate.outcome == 'failure' || steps.readme.outcome == 'failure'
+        run: |
+          {
+            echo "<!-- automated-pr-check -->"
+            echo "## Automated review found some issues"
+            echo ""
+            echo "Thanks for the contribution! A few things to fix before this can be merged:"
+            echo ""
+            if [ -s validation_errors.txt ]; then
+              echo "### Snippet syntax"
+              cat validation_errors.txt
+              echo ""
+            fi
+            if [ -s readme_sync_errors.txt ]; then
+              echo "### Documentation"
+              cat readme_sync_errors.txt
+              echo ""
+            fi
+            echo "See [CONTRIBUTING.md](../blob/master/CONTRIBUTING.md) for the expected snippet format."
+            echo ""
+            echo "Push a new commit to this branch and the check will re-run automatically."
+          } > comment_body.txt
+
+      - name: Post or update feedback on PR
+        if: steps.validate.outcome == 'failure' || steps.readme.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const body = fs.readFileSync('comment_body.txt', 'utf8');
+            const marker = '<!-- automated-pr-check -->';
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const existing = comments.find(c => c.body.includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
+      - name: Resolve feedback comment if now passing
+        if: steps.validate.outcome == 'success' && steps.readme.outcome == 'success'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const marker = '<!-- automated-pr-check -->';
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const existing = comments.find(c => c.body.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body: `${marker}\n## Automated review passed ✅\n\nAll checks are green now, thanks!`,
+              });
+            }
+
+      - name: Fail job if issues were found
+        if: steps.validate.outcome == 'failure' || steps.readme.outcome == 'failure'
+        run: exit 1
